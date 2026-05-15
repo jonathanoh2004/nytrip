@@ -100,7 +100,7 @@ export default function EventModal({ open, event, onClose, onSave, onDelete }) {
             </select>
           </div>
           <div className="field" style={{ width: 140, flexShrink: 0 }}>
-            <label>Cost (¥)</label>
+            <label>Cost ($)</label>
             <input
               type="number"
               min="0"

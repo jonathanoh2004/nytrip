@@ -1,13 +1,13 @@
 // ===== Constants + Helpers + LocalStorage =====
 
 export const CATEGORIES = [
-  { id: "food",    label: "Food",         bg: "var(--c-food)",   ink: "#6b3027", deep: "var(--c-food-deep)",   icon: "🍜" },
-  { id: "sight",   label: "Sightseeing",  bg: "var(--c-sight)",  ink: "#2f4a37", deep: "var(--c-sight-deep)",  icon: "⛩" },
+  { id: "food",    label: "Food",         bg: "var(--c-food)",   ink: "#5a1a17", deep: "var(--c-food-deep)",   icon: "🍕" },
+  { id: "sight",   label: "Sightseeing",  bg: "var(--c-sight)",  ink: "#1D4A45", deep: "var(--c-sight-deep)",  icon: "🗽" },
   { id: "city",    label: "City",         bg: "var(--c-city)",   ink: "#2c4760", deep: "var(--c-city-deep)",   icon: "🏙" },
   { id: "shop",    label: "Shopping",     bg: "var(--c-shop)",   ink: "#583761", deep: "var(--c-shop-deep)",   icon: "🛍" },
   { id: "nature",  label: "Nature",       bg: "var(--c-nature)", ink: "#3f5326", deep: "var(--c-nature-deep)", icon: "🌿" },
   { id: "night",   label: "Nightlife",    bg: "var(--c-night)",  ink: "#3b3266", deep: "var(--c-night-deep)",  icon: "🌙" },
-  { id: "onsen",   label: "Onsen / Spa",  bg: "var(--c-onsen)",  ink: "#6b4a1c", deep: "var(--c-onsen-deep)",  icon: "♨" },
+  { id: "art",     label: "Arts",         bg: "var(--c-art)",    ink: "#6B4818", deep: "var(--c-art-deep)",    icon: "🎨" },
   { id: "stay",    label: "Stay",         bg: "var(--c-stay)",   ink: "#5b3a1d", deep: "var(--c-stay-deep)",   icon: "🛏" },
 ];
 
@@ -69,7 +69,7 @@ export function fmtTime(hhmm) {
   return `${hh}:${String(m).padStart(2,"0")} ${ap}`;
 }
 
-const LS_KEY = "japan-trip-state-v1";
+const LS_KEY = "nyc-trip-state-v1";
 
 export function loadState() {
   try {
@@ -90,19 +90,19 @@ export function seed() {
     tripStart: DEFAULT_TRIP_START,
     tripEnd: DEFAULT_TRIP_END,
     reels: [
-      { id: "r1", title: "Tiny ramen counter in Shinjuku", url: "https://instagram.com/reel/abc1", category: "food",    note: "9 seats, midnight only", addedBy: "Sample", placedDay: null },
-      { id: "r2", title: "Fushimi Inari at sunrise",       url: "https://instagram.com/reel/abc2", category: "sight",   note: "Get there by 5:45am",     addedBy: "Sample", placedDay: null },
-      { id: "r3", title: "Shibuya scramble timelapse",     url: "https://instagram.com/reel/abc3", category: "city",    note: "Best view: 2F Starbucks",  addedBy: "Sample", placedDay: null },
-      { id: "r4", title: "Vintage shop alley Shimokita",   url: "https://instagram.com/reel/abc4", category: "shop",    note: "",                          addedBy: "Sample", placedDay: null },
-      { id: "r5", title: "Arashiyama bamboo grove",        url: "https://instagram.com/reel/abc5", category: "nature",  note: "Skip the busy gate",        addedBy: "Sample", placedDay: null },
-      { id: "r6", title: "Golden Gai bar crawl",           url: "https://instagram.com/reel/abc6", category: "night",   note: "6 bars, ¥1000 cover each",  addedBy: "Sample", placedDay: null },
-      { id: "r7", title: "Hakone open-air onsen ryokan",   url: "https://instagram.com/reel/abc7", category: "onsen",   note: "Book 2 months ahead",       addedBy: "Sample", placedDay: null },
-      { id: "r8", title: "Tsukiji tamagoyaki stall",       url: "https://instagram.com/reel/abc8", category: "food",    note: "¥150, sweet omelette",      addedBy: "Sample", placedDay: null },
-      { id: "r9", title: "teamLab Planets",                url: "https://instagram.com/reel/abc9", category: "sight",   note: "Wear shorts!",              addedBy: "Sample", placedDay: null },
+      { id: "r1", title: "$1 pizza slice on Bleecker St",   url: "https://instagram.com/reel/abc1", category: "food",   note: "Joe's Pizza, get there early", addedBy: "Sample", placedDay: null },
+      { id: "r2", title: "Statue of Liberty sunrise ferry", url: "https://instagram.com/reel/abc2", category: "sight",  note: "First ferry at 8:30am",        addedBy: "Sample", placedDay: null },
+      { id: "r3", title: "Times Square midnight walk",      url: "https://instagram.com/reel/abc3", category: "city",   note: "Way less crowded after 11pm",  addedBy: "Sample", placedDay: null },
+      { id: "r4", title: "Vintage hunting in Brooklyn",     url: "https://instagram.com/reel/abc4", category: "shop",   note: "Beacon's Closet is a must",    addedBy: "Sample", placedDay: null },
+      { id: "r5", title: "Central Park rowboat hour",       url: "https://instagram.com/reel/abc5", category: "nature", note: "$20/hr, cash only",            addedBy: "Sample", placedDay: null },
+      { id: "r6", title: "Rooftop bar crawl in LES",        url: "https://instagram.com/reel/abc6", category: "night",  note: "Start at 230 Fifth",           addedBy: "Sample", placedDay: null },
+      { id: "r7", title: "MoMA permanent collection",       url: "https://instagram.com/reel/abc7", category: "art",    note: "Free Fridays 5:30–9pm",        addedBy: "Sample", placedDay: null },
+      { id: "r8", title: "Bagel + lox at Russ & Daughters", url: "https://instagram.com/reel/abc8", category: "food",   note: "Get the Classic",              addedBy: "Sample", placedDay: null },
+      { id: "r9", title: "High Line end-to-end walk",       url: "https://instagram.com/reel/abc9", category: "sight",  note: "Best views at the Spur",       addedBy: "Sample", placedDay: null },
     ],
     events: [
-      { id: "e1", title: "Land at Haneda",          day: "2026-05-10", start: "15:00", end: "17:00", category: "stay",  addedBy: "Sample" },
-      { id: "e2", title: "Check in to Shinjuku hotel", day: "2026-05-10", start: "18:30", end: "19:30", category: "stay", addedBy: "Sample" },
+      { id: "e1", title: "Land at JFK",              day: "2026-05-10", start: "15:00", end: "17:00", category: "stay", addedBy: "Sample" },
+      { id: "e2", title: "Check in to hotel",        day: "2026-05-10", start: "18:30", end: "19:30", category: "stay", addedBy: "Sample" },
     ],
   };
 }

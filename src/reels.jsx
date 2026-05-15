@@ -5,7 +5,7 @@ import { CategoryTag } from './components.jsx'
 
 function fmtCost(n) {
   if (!n || n === 0) return null;
-  return `¥${Math.round(n).toLocaleString()}`;
+  return `$${Math.round(n).toLocaleString()}`;
 }
 
 function ReelCard({ reel, onDelete, onEdit }) {
@@ -120,7 +120,7 @@ export function ReelModal({ open, reel, onClose, onSubmit, onDelete }) {
         <div className="field">
           <label>Title / what is it?</label>
           <input type="text"
-            placeholder="e.g. Tiny ramen counter in Shinjuku"
+            placeholder="e.g. $1 pizza slice on Bleecker St"
             value={title}
             onChange={e => setTitle(e.target.value)}
             autoFocus={isEdit} />
@@ -141,7 +141,7 @@ export function ReelModal({ open, reel, onClose, onSubmit, onDelete }) {
         </div>
 
         <div className="field" style={{ maxWidth: 200 }}>
-          <label>Estimated cost (¥)</label>
+          <label>Estimated cost ($)</label>
           <input
             type="number"
             min="0"
@@ -197,7 +197,7 @@ export function ReelsBoard({ reels, onDelete, onEdit, openUpload }) {
           <div className="sub" style={{ marginTop: 4 }}>
             {reels.length} activit{reels.length === 1 ? "y" : "ies"} · {unplaced} unscheduled ·
             {" "}{new Set(reels.map(r => r.addedBy)).size} planner{new Set(reels.map(r => r.addedBy)).size === 1 ? "" : "s"}
-            {plannedCost > 0 && <> · <b style={{ color: "var(--c-onsen-deep)" }}>¥{Math.round(plannedCost).toLocaleString()} on calendar</b></>}
+            {plannedCost > 0 && <> · <b style={{ color: "var(--c-art-deep)" }}>${Math.round(plannedCost).toLocaleString()} on calendar</b></>}
             <span style={{ marginLeft: 8, color: "var(--ink-faint)" }}>· click any card to edit</span>
           </div>
         </div>

@@ -1,4 +1,4 @@
--- Japan Trip Planner — Supabase schema
+-- NYC Trip Planner — Supabase schema
 -- Run this in the Supabase SQL editor (Dashboard → SQL Editor → New query)
 
 -- 1. Reels (individual Instagram/link items added to the board)

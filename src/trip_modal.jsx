@@ -32,7 +32,7 @@ export default function TripDatesModal({ open, start, end, onClose, onSave }) {
       <div className="modal" onClick={evt => evt.stopPropagation()} style={{ maxWidth: 460 }}>
         <button className="modal-close" onClick={onClose}>×</button>
         <h2>Trip dates</h2>
-        <p className="modal-sub">When are you in Japan? Pick the first and last day.</p>
+        <p className="modal-sub">When are you in New York? Pick the first and last day.</p>
 
         <div className="field-row">
           <div className="field" style={{ flex: 1 }}>
@@ -49,11 +49,11 @@ export default function TripDatesModal({ open, start, end, onClose, onSave }) {
 
         {days > 0 && (
           <div style={{
-            background: "var(--c-onsen)", color: "#6b4a1c",
+            background: "var(--c-art)", color: "#6B4818",
             padding: "10px 14px", borderRadius: 12, fontWeight: 700, fontSize: 13,
             marginTop: 4, marginBottom: 4
           }}>
-            {days} day{days === 1 ? "" : "s"} in Japan ✿
+            {days} day{days === 1 ? "" : "s"} in New York ✿
           </div>
         )}
 

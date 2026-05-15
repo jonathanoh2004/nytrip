@@ -3,7 +3,10 @@
     "allow": [
       "Bash(npm run *)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5174/)",
-      "Bash(npm install *)"
+      "Bash(npm install *)",
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\jonat\\\\github\\\\nytrip\" -Recurse -Force)",
+      "Bash(Select-Object -First 50)",
+      "Bash(Format-Table Name, FullName -AutoSize)"
     ]
   }
 }

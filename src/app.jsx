@@ -26,7 +26,7 @@ function applyReelOrder(reels, order) {
 const DEFAULT_SETTINGS = { tripStart: "2026-05-10", tripEnd: "2026-05-23", roster: [], reelOrder: [] };
 
 export default function App() {
-  const [user, setUser] = useState(() => sessionStorage.getItem("jt-user") || null);
+  const [user, setUser] = useState(() => sessionStorage.getItem("nyc-user") || null);
   const [settings, setSettings] = useState(DEFAULT_SETTINGS);
   const [reels, setReels] = useState([]);
   const [events, setEvents] = useState([]);
@@ -91,14 +91,14 @@ export default function App() {
   // ---- Auth ----
   const signIn = async (name) => {
     setUser(name);
-    sessionStorage.setItem("jt-user", name);
+    sessionStorage.setItem("nyc-user", name);
     const newRoster = settings.roster.includes(name) ? settings.roster : [...settings.roster, name];
     if (newRoster.length !== settings.roster.length) {
       setSettings(s => ({ ...s, roster: newRoster }));
       await supabase.from('settings').update({ roster: newRoster }).eq('id', 1);
     }
   };
-  const signOut = () => { setUser(null); sessionStorage.removeItem("jt-user"); };
+  const signOut = () => { setUser(null); sessionStorage.removeItem("nyc-user"); };
 
   // ---- Activities (reels) ----
   const addReel = async ({ url, title, note, category, cost }) => {
@@ -232,7 +232,7 @@ export default function App() {
     return (
       <div style={{ minHeight: "100vh", display: "grid", placeItems: "center", fontFamily: "Nunito, sans-serif", color: "var(--ink-soft)" }}>
         <div style={{ textAlign: "center" }}>
-          <div style={{ fontFamily: "Caveat, cursive", fontSize: 48, marginBottom: 8 }}>🇯🇵</div>
+          <div style={{ fontFamily: "Caveat, cursive", fontSize: 48, marginBottom: 8 }}>🗽</div>
           <div style={{ fontSize: 14 }}>Loading your trip...</div>
         </div>
       </div>
@@ -272,8 +272,8 @@ export default function App() {
     <div className="app-shell">
       <div className="topbar">
         <div className="brand">
-          <div className="brand-mark">日</div>
-          <span>Japan Trip</span>
+          <div className="brand-mark">NY</div>
+          <span>NYC Trip</span>
         </div>
 
         {view === "calendar" && (
@@ -297,7 +297,7 @@ export default function App() {
             📍 Activities
             {normalizedReels.filter(r => !r.placedDay).length > 0 && (
               <span style={{
-                marginLeft: 4, background: "var(--c-food)", color: "#5b2e26",
+                marginLeft: 4, background: "var(--c-food)", color: "#5a1a17",
                 padding: "1px 6px", borderRadius: 999, fontSize: 10, fontWeight: 800,
               }}>{normalizedReels.filter(r => !r.placedDay).length}</span>
             )}

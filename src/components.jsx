@@ -40,14 +40,14 @@ export function Login({ roster, onSignIn }) {
       <div className="login-deco">
         <div className="blob" style={{ background: "var(--c-food)",   top: "8%",  left: "12%", transform: "rotate(12deg)" }} />
         <div className="blob" style={{ background: "var(--c-sight)",  top: "70%", left: "6%",  width: 240, height: 240 }} />
-        <div className="blob" style={{ background: "var(--c-onsen)",  top: "20%", right: "10%", width: 220, height: 220 }} />
+        <div className="blob" style={{ background: "var(--c-art)",    top: "20%", right: "10%", width: 220, height: 220 }} />
         <div className="blob" style={{ background: "var(--c-shop)",   bottom: "12%", right: "16%" }} />
       </div>
 
       <div className="login-card">
-        <div className="login-stamp">日本 '26</div>
-        <h1>Japan Trip<br/>Planner</h1>
-        <p className="sub">Throw in reels, drag onto days, eat your way through Tokyo. First — who's planning?</p>
+        <div className="login-stamp">NYC '26</div>
+        <h1>NYC Trip<br/>Planner</h1>
+        <p className="sub">Throw in reels, drag onto days, eat your way through New York. First — who's planning?</p>
         <label className="login-label">Your name</label>
         <input
           className="login-input"

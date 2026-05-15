@@ -8,7 +8,7 @@ import {
 
 function fmtCost(n) {
   if (!n || n === 0) return null;
-  return `¥${Math.round(n).toLocaleString()}`;
+  return `$${Math.round(n).toLocaleString()}`;
 }
 
 // ---- Pie chart helpers ----
@@ -63,7 +63,7 @@ function CostChartModal({ open, onClose, events }) {
         <h2>Cost breakdown</h2>
         <p className="modal-sub">
           Estimated spend on scheduled activities · Total{" "}
-          <b style={{ color: "var(--c-onsen-deep)" }}>¥{Math.round(total).toLocaleString()}</b>
+          <b style={{ color: "var(--c-art-deep)" }}>${Math.round(total).toLocaleString()}</b>
         </p>
         {slices.length === 0 ? (
           <div style={{ textAlign: "center", padding: "32px 0", color: "var(--ink-soft)", fontSize: 14 }}>
@@ -77,7 +77,7 @@ function CostChartModal({ open, onClose, events }) {
                 <div key={s.id} style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
                   <span style={{ width: 12, height: 12, borderRadius: 3, background: s.bg, flexShrink: 0 }} />
                   <span style={{ fontSize: 13, flex: 1 }}>{s.icon} {s.label}</span>
-                  <span style={{ fontSize: 13, fontWeight: 800, color: s.deep }}>¥{Math.round(s.value).toLocaleString()}</span>
+                  <span style={{ fontSize: 13, fontWeight: 800, color: s.deep }}>${Math.round(s.value).toLocaleString()}</span>
                   <span style={{ fontSize: 11, color: "var(--ink-faint)", minWidth: 30, textAlign: "right" }}>
                     {Math.round(s.value / total * 100)}%
                   </span>
@@ -264,7 +264,7 @@ export default function Calendar({ anchor, setAnchor, events, reels, tripStart, 
             {totalCost > 0 && (
               <div style={{ marginTop: 2 }}>
                 Est. total{" "}
-                <b style={{ color: "var(--c-onsen-deep)" }}>¥{Math.round(totalCost).toLocaleString()}</b>
+                <b style={{ color: "var(--c-art-deep)" }}>${Math.round(totalCost).toLocaleString()}</b>
               </div>
             )}
           </div>
@@ -364,7 +364,7 @@ export default function Calendar({ anchor, setAnchor, events, reels, tripStart, 
                 <div className="dow">{DOW[d.getDay()]}</div>
                 <div className="dnum">{d.getDate()}</div>
                 <div className="date-label">{MONTHS_SHORT[d.getMonth()]}</div>
-                {dayTotal > 0 && <div className="day-cost">¥{Math.round(dayTotal).toLocaleString()}</div>}
+                {dayTotal > 0 && <div className="day-cost">${Math.round(dayTotal).toLocaleString()}</div>}
               </div>
             );
           })}
