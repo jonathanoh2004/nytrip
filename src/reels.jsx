@@ -85,7 +85,7 @@ export function ReelModal({ open, reel, onClose, onSubmit, onDelete }) {
 
   if (!open) return null;
 
-  const valid = url.trim() && title.trim();
+  const valid = title.trim();
   const submit = () => {
     if (!valid) return;
     onSubmit({
@@ -105,17 +105,8 @@ export function ReelModal({ open, reel, onClose, onSubmit, onDelete }) {
         <p className="modal-sub">
           {isEdit
             ? "Update the details, category, or cost estimate."
-            : "Paste any link — Instagram, Google Maps, a restaurant site, anything."}
+            : "Give it a name, pick a category, and optionally add a link."}
         </p>
-
-        <div className="field">
-          <label>Link</label>
-          <input type="text"
-            placeholder="https://instagram.com/reel/… or maps.google.com or any URL"
-            value={url}
-            onChange={e => setUrl(e.target.value)}
-            autoFocus={!isEdit} />
-        </div>
 
         <div className="field">
           <label>Title / what is it?</label>
@@ -123,7 +114,7 @@ export function ReelModal({ open, reel, onClose, onSubmit, onDelete }) {
             placeholder="e.g. $1 pizza slice on Bleecker St"
             value={title}
             onChange={e => setTitle(e.target.value)}
-            autoFocus={isEdit} />
+            autoFocus />
         </div>
 
         <div className="field">
@@ -150,6 +141,14 @@ export function ReelModal({ open, reel, onClose, onSubmit, onDelete }) {
             value={cost}
             onChange={e => setCost(e.target.value)}
           />
+        </div>
+
+        <div className="field">
+          <label>Link <span style={{ fontWeight: 400, textTransform: "none", letterSpacing: 0, opacity: 0.6 }}>(optional)</span></label>
+          <input type="text"
+            placeholder="https://instagram.com/reel/… or maps.google.com or any URL"
+            value={url}
+            onChange={e => setUrl(e.target.value)} />
         </div>
 
         <div className="field">
